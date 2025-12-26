@@ -3,7 +3,6 @@
   "version": "2.1.29",
   "license": "MIT",
   "private": true,
-  "module": "true",
   "scripts": {
     "precommit": "lint-staged",
     "start": "parcel src/index.html -p 3000",
