@@ -35,7 +35,7 @@ app.use(handleAuthRoutes(config));
 app.get('/', (request, response) => {
   response.setHeader('content-type', 'text/html');
   response.end(
-    `<h1>Hello ${request.user.claims?.sub}</h1>
+    `<h1>Hello test</h1>
       <div><a href="/logto/sign-in">Sign In</a></div>
       <div><a href="/logto/sign-out">Sign Out</a></div>
       <div><a href="/local-user-claims">Profile</a></div>
@@ -44,6 +44,16 @@ app.get('/', (request, response) => {
       <div><a href="/fetch-access-token">Fetch access token</a></div>
       <div><a href="/fetch-organization-token">Fetch organization token</a></div>`
   );
+});
+
+app.get('/test', withLogto(config), (req, res) => {
+    res.setHeader('content-type', 'text/html');
+
+    if (req.user.isAuthenticated) {
+        res.end(`<div>Hello ${req.user.claims?.sub}, <a href="/logto/sign-out">Sign Out</a></div>`);
+    } else {
+        res.end('<div><a href="/logto/sign-in">Sign In</a></div>');
+    }
 });
 
 app.get('/local-user-claims', withLogto(config), (request, response) => {
