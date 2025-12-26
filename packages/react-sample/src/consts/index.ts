@@ -1,5 +1,5 @@
 export const baseUrl = window.location.origin;
 export const redirectUrl = `${baseUrl}/callback`;
 
-export const appId = 'sampleId'; // Register the sample app in Logto dashboard
-export const endpoint = 'http://localhost:3001'; // Replace with your own Logto endpoint
+export const appId = 'yxmalag1bohx82i23o246'; // Register the sample app in Logto dashboard
+export const endpoint = 'https://auth-dev.pathwayapp.co'; // Replace with your own Logto endpoint
