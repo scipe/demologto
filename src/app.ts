@@ -8,10 +8,10 @@ import express from 'express';
 import session from 'express-session';
 
 const config: LogtoExpressConfig = {
-  appId: 'appId', // Replace with your own appId
-  appSecret: 'appSecret', // Replace with your own appSecret
-  endpoint: 'http://localhost:3001',
-  baseUrl: 'http://localhost:3000',
+    endpoint: 'https://auth-dev.pathwayapp.co/',
+    appId: '47spzu7egu8bwk1dws4i0',
+    appSecret: 'DRQILJNBrKXLDlTDtMB34NYPCouAryZ0',
+    baseUrl: 'https://logto-demo-ogpng.ondigitalocean.app',
 };
 
 const requireAuth = async (request: Request, response: Response, next: NextFunction) => {
