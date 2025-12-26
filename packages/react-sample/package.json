@@ -12,10 +12,10 @@
     "stylelint": "stylelint \"src/**/*.scss\""
   },
   "engines" : { 
-    "node" : ">=22.0.0"
+    "node" : "22.0.0"
   },
   "dependencies": {
-    "@logto/react": "workspace:^",
+    "@logto/react": "^4.0.10",
     "@tanstack/react-query": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
