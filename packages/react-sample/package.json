@@ -41,14 +41,9 @@
     "postcss-modules": "^6.0.0",
     "prettier": "^3.0.0",
     "process": "^0.11.10",
-    "stylelint": "^16.0.0",
     "typescript": "^5.3.3"
   },
   "eslintConfig": {
     "extends": "@silverhand/react"
-  },
-  "stylelint": {
-    "extends": "@silverhand/eslint-config-react/.stylelintrc"
-  },
-  "prettier": "@silverhand/eslint-config/.prettierrc"
+  }
 }
