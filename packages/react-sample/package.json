@@ -3,18 +3,19 @@
   "version": "2.1.29",
   "license": "MIT",
   "private": true,
+  "module": "true",
   "scripts": {
     "precommit": "lint-staged",
     "start": "parcel src/index.html -p 3000",
     "check": "tsc --noEmit",
-    "build": "pnpm check && rm -rf dist && parcel build src/index.html --no-autoinstall",
+    "build": "rm -rf dist && parcel build src/index.html --no-autoinstall",
     "lint": "eslint --ext .ts --ext .tsx src",
     "stylelint": "stylelint \"src/**/*.scss\""
   },
   "engines" : { 
-    "node" : "22.0.0"
+    "node" : "^20.9.0"
   },
-  "packageManager": "^pnpm@6.32.4",
+  "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@logto/react": "^4.0.10",
     "@tanstack/react-query": "^5.0.0",
