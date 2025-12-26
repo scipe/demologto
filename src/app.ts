@@ -28,8 +28,6 @@ app.use(
   session({
     secret: 'aN4puGkIc6KWFSj9YCrYD0h43BFi8ZuQ',
     cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 },
-    resave: false,
-    saveUninitialized: false,
   })
 );
 app.use(handleAuthRoutes(config));
