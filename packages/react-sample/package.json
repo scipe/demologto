@@ -13,7 +13,7 @@
   },
   "engines" : { 
     "node" : ">=22.0.0"
-  }
+  },
   "dependencies": {
     "@logto/react": "workspace:^",
     "@tanstack/react-query": "^5.0.0",
