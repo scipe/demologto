@@ -35,7 +35,7 @@ app.use(handleAuthRoutes(config));
 app.get('/', (request, response) => {
   response.setHeader('content-type', 'text/html');
   response.end(
-    `<h1>Hello Logto</h1>
+    `<h1>Hello ${request.user.claims?.sub}</h1>
       <div><a href="/logto/sign-in">Sign In</a></div>
       <div><a href="/logto/sign-out">Sign Out</a></div>
       <div><a href="/local-user-claims">Profile</a></div>
