@@ -32,27 +32,30 @@ app.use(
 );
 app.use(handleAuthRoutes(config));
 
-app.get('/', (request, response) => {
-  response.setHeader('content-type', 'text/html');
-  response.end(
-    `<h1>Hello test</h1>
-      <div><a href="/logto/sign-in">Sign In</a></div>
-      <div><a href="/logto/sign-out">Sign Out</a></div>
-      <div><a href="/local-user-claims">Profile</a></div>
-      <div><a href="/protected">Protected Resource</a></div>
-      <div><a href="/remote-full-user">Fetch user info</a></div>
-      <div><a href="/fetch-access-token">Fetch access token</a></div>
-      <div><a href="/fetch-organization-token">Fetch organization token</a></div>`
-  );
-});
-
-app.get('/test', withLogto(config), (req, res) => {
+app.get('/', withLogto(config), (req, res) => {
     res.setHeader('content-type', 'text/html');
 
     if (req.user.isAuthenticated) {
-        res.end(`<div>Hello ${req.user.claims?.sub}, <a href="/logto/sign-out">Sign Out</a></div>`);
+        res.end(
+            `<h1>Shalom ${req.user.claims?.sub}!</h1>
+            <div><a href="/logto/sign-out">Sign Out</a></div>
+            <hr/>
+            <div><a href="/local-user-claims">Profile</a></div>
+            <div><a href="/protected">Protected Resource</a></div>
+            <div><a href="/remote-full-user">Fetch user info</a></div>
+            <div><a href="/fetch-access-token">Fetch access token</a></div>
+            <div><a href="/fetch-organization-token">Fetch organization token</a></div>`
+        );
     } else {
-        res.end('<div><a href="/logto/sign-in">Sign In</a></div>');
+        res.end(
+            `<h1>Shalom unknown user!</h1>
+            <div><a href="/logto/sign-in">Sign In</a></div>
+            <hr/>
+            <div><a href="/protected">Protected Resource</a></div>
+            <div><a href="/remote-full-user">Fetch user info</a></div>
+            <div><a href="/fetch-access-token">Fetch access token</a></div>
+            <div><a href="/fetch-organization-token">Fetch organization token</a></div>`
+        );
     }
 });
 
